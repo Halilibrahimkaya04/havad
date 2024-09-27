@@ -28,7 +28,7 @@ public class WeatherController {
             WeatherDocument weather = weatherService.getWeatherByCity(city);
             return ResponseEntity.ok(weather);
         } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null); // Şehir bulunamazsa 404 döndür
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
