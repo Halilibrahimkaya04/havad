@@ -1,19 +1,24 @@
 package org.hdwork.havad.model;
 
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 
 @Document(collection = "weather")
+@Data
 public class WeatherDocument {
 
     @Id
     private String id;
     private String name;
+
+
     private Main main;
     private List<Weather> weather;
 
     // Getters and Setters
+
 
     public String getId() {
         return id;
@@ -46,6 +51,7 @@ public class WeatherDocument {
     public void setWeather(List<Weather> weather) {
         this.weather = weather;
     }
+
 
     public static class Main {
         private double temp;
